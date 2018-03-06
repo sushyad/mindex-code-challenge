@@ -3,7 +3,7 @@ package com.mindex.challenge.data;
 import java.util.List;
 
 public class Employee {
-    private String id;
+    private String employeeId;
     private String firstName;
     private String lastName;
     private String position;
@@ -13,12 +13,12 @@ public class Employee {
     public Employee() {
     }
 
-    public String getId() {
-        return id;
+    public String getEmployeeId() {
+        return employeeId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 
     public String getFirstName() {
