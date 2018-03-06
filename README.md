@@ -109,4 +109,5 @@ Create a new type, Compensation. A Compensation has the following JSON schema:
   }
 }
 ```
-Create new Compensation REST endpoints to create and read by employeeId.
+Create new Compensation REST endpoints to create and read by employeeId. This should persist and query the Compensation
+from the in-memory persistence.
