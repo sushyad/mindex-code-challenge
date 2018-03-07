@@ -10,6 +10,7 @@ The application may be executed by running `gradle bootRun`.
 
 ### How to Use
 The following endpoints are available to use:
+```
 * CREATE
     * HTTP Method: POST 
     * URL: localhost:8080/employee
@@ -24,7 +25,7 @@ The following endpoints are available to use:
     * URL: localhost:8080/employee/{id}
     * PAYLOAD: Employee
     * RESPONSE: Employee
-    
+```
 The Employee has a JSON schema of:
 ```json
 {
