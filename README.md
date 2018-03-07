@@ -84,7 +84,7 @@ given the following employee structure:
                                /        \
                           Pete Best     George Harrison
 ```
-The numberOfReports for employee John Lennon would be equal to 4. 
+The numberOfReports for employee John Lennon (employeeId: 16a596ae-edd3-4847-99fe-c4518e82c86f) would be equal to 4. 
 
 This new type should have a new REST endpoint created for it. This new endpoint should accept an employeeId and return 
 the fully filled out ReportingStructure for the specified employeeId. The values should be computed on the fly and will 
