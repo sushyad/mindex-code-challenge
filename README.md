@@ -10,6 +10,7 @@ The application may be executed by running `gradle bootRun`.
 
 ### How to Use
 The following endpoints are available to use:
+```
 * CREATE
     * HTTP Method: POST 
     * URL: localhost:8080/employee
@@ -24,7 +25,7 @@ The following endpoints are available to use:
     * URL: localhost:8080/employee/{id}
     * PAYLOAD: Employee
     * RESPONSE: Employee
-    
+```
 The Employee has a JSON schema of:
 ```json
 {
@@ -83,7 +84,7 @@ given the following employee structure:
                                /        \
                           Pete Best     George Harrison
 ```
-The numberOfReports for employee John Lennon would be equal to 4. 
+The numberOfReports for employee John Lennon (employeeId: 16a596ae-edd3-4847-99fe-c4518e82c86f) would be equal to 4. 
 
 This new type should have a new REST endpoint created for it. This new endpoint should accept an employeeId and return 
 the fully filled out ReportingStructure for the specified employeeId. The values should be computed on the fly and will 
@@ -96,7 +97,7 @@ Create a new type, Compensation. A Compensation has the following JSON schema:
   "type":"Compensation",
   "properties": {
     "employee": {
-      "type": "employee"
+      "type": "Employee"
     },
     "salary": {
           "type": "integer"
@@ -109,5 +110,5 @@ Create a new type, Compensation. A Compensation has the following JSON schema:
   }
 }
 ```
-Create new Compensation REST endpoints to create and read by employeeId. This should persist and query the Compensation
+Create two new Compensation REST endpoints. One to create and one to read by employeeId. These should persist and query the Compensation
 from the in-memory persistence.
