@@ -27,6 +27,7 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+	compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.2")
 	compile group: 'com.github.fakemongo', name: 'fongo', version: '2.1.1'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
