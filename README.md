@@ -70,7 +70,6 @@ Create a new type, ReportingStructure, that has the following JSON schema:
     "numberOfReports": {
       "type": "integer"
     }
-    }
   }
 }
 ```
@@ -105,7 +104,6 @@ Create a new type, Compensation. A Compensation has the following JSON schema:
     "effectiveDate": {
       "type": "string",
       "format": "date-time"
-    }
     }
   }
 }
