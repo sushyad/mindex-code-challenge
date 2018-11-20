@@ -7,6 +7,8 @@ import com.mindex.challenge.service.ReportingStructureService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ReportingStructureServiceImpl implements ReportingStructureService {
@@ -16,21 +18,26 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
 
     @Override
     public ReportingStructure getReportingStructure(String employeeId) {
+        Employee employee = employeeService.read(employeeId);
         ReportingStructure reportingStructure = new ReportingStructure();
-        reportingStructure.setEmployee(employeeService.read(employeeId));
-        reportingStructure.setNumberOfReports(this.getReportCount(employeeId));
+        reportingStructure.setEmployee(employee);
+        reportingStructure.setNumberOfReports(this.getReportCount(employee));
 
         return reportingStructure;
     }
 
-    private int getReportCount(String employeeId) {
-        Employee employee = employeeService.read(employeeId);
+    private int getReportCount(Employee employee) {
         int numberOfReports = 0;
         if (employee != null && employee.getDirectReports() != null) {
+            List<Employee> directReports = new ArrayList();
             for (Employee directReport : employee.getDirectReports()) {
                 numberOfReports++;
-                numberOfReports += this.getReportCount(directReport.getEmployeeId());
+                Employee directReportEmployee = employeeService.read(directReport.getEmployeeId());
+                numberOfReports += this.getReportCount(directReportEmployee);
+                directReports.add(directReportEmployee);
             }
+
+            employee.setDirectReports(directReports);
         }
 
         return numberOfReports;
