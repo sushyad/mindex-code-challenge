@@ -152,6 +152,7 @@ My implementation supports multiple compensation records for a given employee an
 To Do: Make employeeId and effectiveDate unique
 
 #### Create Compensation
+If the effectiveDate is left null or empty, current time stamp is used
 
 Method: POST
 URL: http://localhost:8080/employee/16a596ae-edd3-4847-99fe-c4518e82c86f/compensation
